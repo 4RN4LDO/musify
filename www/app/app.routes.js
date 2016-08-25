@@ -4,7 +4,7 @@
   angular
     .module('app')
     .config(function($stateProvider, $urlRouterProvider) {
-      $urlRouterProvider.otherwise('/login');
+      $urlRouterProvider.otherwise('/events');
     });
 })();
 
