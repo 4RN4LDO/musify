@@ -1,6 +1,6 @@
 {
   "name": "musify",
-  "app_id": "d624ddd2",
+  "app_id": "a46a6892",
   "gulpStartupTasks": [
     "build-index",
     "sass",
