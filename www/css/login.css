@@ -1,0 +1,17 @@
+.login-logo{
+  margin: 0 auto;
+  display: table;
+  height: 120px;
+  width: auto;
+  border-radius: 20px;
+}
+
+/**  margin was overwritten by .item h2 from ionic.app.css */ 
+.login-title{
+  margin: 0 auto !important;
+  display: table;
+}
+
+.borderless {
+  border: none;
+}
