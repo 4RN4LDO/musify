@@ -1,1 +1,23 @@
-<h1> {{vm.instrument}} </h1>
+<ion-view>
+  <div class="bar bar-header bar-balanced">
+  </div>
+  <div class="content has-header">
+    <div class="list list-inset">
+    <label class="item borderless">
+      <img class="login-logo" src="img/musify-logo.png"/>
+      <h1 class="login-title"> Musify </h1>
+    </label>
+    <form name="loginForm">
+      <label class="item item-input">
+        <input type="text" placeholder="Usuario" ng-model="vm.user.username" name="username" required>
+      </label>
+      <label class="item item-input">
+        <input type="password" placeholder="Contraseña" ng-model="vm.user.password" name="password" required>
+      </label>
+      </div>
+    </form>
+    <div class="padding">
+      <button class="button button-block button-balanced activated" ng-disabled="loginForm.$invalid" ng-click="vm.authenticate()">Aceptar</button>
+    </div>
+  </div>
+</ion-view>
