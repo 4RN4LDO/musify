@@ -6,28 +6,41 @@
     .controller('LoginCtrl', LoginCtrl);
 
   /* @ngInject */
-  function LoginCtrl($http, $scope) {
+  function LoginCtrl(authService, $state, $ionicPopup) {
 
     var vm = this;
+    vm.authenticate = authenticate;
 
     activate();
 
     function activate() {
-      getAllClients()
-      .then(function (response) {
-        vm.instrument = response.data;
-      })
+      vm.user = {};
     }
 
-    function getAllClients () {
-      return $http({
-        url: 'http://localhost:8080/v2/instrument/1003',
-        method: 'GET',
-        data: {
-          username: 'proyecto',
-          password: 'root'
-        }
-      });
+    function authenticate() {
+      authService.authenticate(vm.user)
+        .then(handleLoginSuccess)
+        .catch(handleLoginError);
+    }
+
+    function handleLoginSuccess(response) {
+      if (response.data.status === 'true') {
+        authService.setCurrentUser(vm.user);
+        $state.go('events');
+      }else {
+        showAuthErrorPopup();
+      }
+    }
+
+    function handleLoginError(response) {
+      showAuthErrorPopup();
+    }
+
+    function showAuthErrorPopup() {
+     var alertPopup = $ionicPopup.alert({
+       title: 'Error de autenticación',
+       template: 'Usuario o contraseña incorrectos'
+     });
     }
 
   }
