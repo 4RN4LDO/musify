@@ -11,7 +11,8 @@
     var service = {
       currentUser: '',
       authenticate: authenticate,
-      setCurrentUser: setCurrentUser
+      setCurrentUser: setCurrentUser,
+      getCurrentUser: getCurrentUser
     };
 
     return service;

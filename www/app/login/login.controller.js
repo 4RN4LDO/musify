@@ -26,7 +26,7 @@
     function handleLoginSuccess(response) {
       if (response.data.status === 'true') {
         authService.setCurrentUser(vm.user);
-        $state.go('events');
+        $state.go('event');
       }else {
         showAuthErrorPopup();
       }
