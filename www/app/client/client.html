@@ -1,0 +1,39 @@
+<ion-view>
+  <div class="bar bar-header bar-balanced">
+  </div>
+  <div class="content has-header">
+    <div class="card">
+      <div class="item item-text-wrap">
+        <form name="form">
+          <label class="item item-input">
+            <span class="input-label"> <strong> Cliente </strong></span>
+            <input type="text" ng-model="vm.cliente" name="username" required>
+          </label>
+        </form>
+        <div ng-if="vm.eventClientIsEmpty()" class="list card">
+          <a class="item item-icon-left">
+            <i class="icon ion-calendar"></i>
+            <strong> Fecha: </strong> {{vm.client.date | date:'yyyy-MM-dd'}}
+          </a>
+          <a class="item item-icon-left">
+            <i class="icon ion-clock"></i>
+            <strong> Hora: </strong> {{vm.client.time | date:'HH:mm:ss'}}
+          </a>
+          <a class="item item-icon-left">
+            <i class="icon ion-home"></i>
+            <strong> Lugar: </strong> {{vm.client.place}}
+          </a>
+          <a class="item item-icon-left">
+            <i class="icon ion-home"></i>
+            <strong> Status: </strong> {{vm.client.estatus}}
+          </a>
+        </div>
+        <div>
+        </div>
+      </div>
+    </div>
+    <div class="padding">
+      <button class="button button-block button-balanced activated" ng-disabled="form.$invalid" ng-click="vm.executeGetEventClient()">Aceptar</button>
+    </div>
+  </div>
+</ion-view>

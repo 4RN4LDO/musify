@@ -5,6 +5,7 @@
     .module('app', [
       'app.core',
       'app.login',
-      'app.event'
+      'app.event',
+      'app.client'
     ]);
 })();
